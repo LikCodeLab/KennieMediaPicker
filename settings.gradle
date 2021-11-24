@@ -17,9 +17,9 @@ include ':library'
 
 // https://github.com/LuckSiege/PictureSelector
 include ':PictureSelector_app'
-project(':PictureSelector_app').projectDir = new File('mediapicker/PictureSelector_20111114/app')
+project(':PictureSelector_app').projectDir = new File('media_picker/PictureSelector_20111114/app')
 include ':PictureSelector_library'
-project(':PictureSelector_library').projectDir = new File('mediapicker/PictureSelector_20111114/picture_library')
+project(':PictureSelector_library').projectDir = new File('media_picker/PictureSelector_20111114/picture_library')
 
 
 
