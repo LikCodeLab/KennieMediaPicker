@@ -5,6 +5,8 @@ plugins {
 
 apply from: "${rootDir}/configs/tools/gradle/app.gradle"
 
+apply from: "${rootDir}/configs/tools/gradle/apk_output.gradle"
+
 android {
 
     defaultConfig {

@@ -8,7 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.kennie.example.library.R
-import com.kennie.library.example.databinding.ActivityMainBinding
+import com.kennie.example.library.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

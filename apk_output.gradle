@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2021 Kennie<xdpvxv@163.com>
+ *
+ * The software is licensed under the Mulan PSL v2.
+ * You can use this software according to the terms and conditions of the Mulan PSL v2.
+ * You may obtain a copy of Mulan PSL v2 at:
+ *     http://license.coscl.org.cn/MulanPSL2
+ * THIS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO NON-INFRINGEMENT, MERCHANTABILITY OR FIT FOR A PARTICULAR
+ * PURPOSE.
+ * See the Mulan PSL v2 for more details.
+ */
+
+//APK重命名
+println "********** apk outputs **********"
+
+static def releaseTime() {
+    def date = new Date()
+    return date.format("yyyy-MM-dd") + "_" + date.format("hhmmss")
+}
+
+android.applicationVariants.all { variant ->
+
+//    def versionName = rootProject.ext.getAppVersionName()
+    def versionCode = rootProject.ext.getAppVersionCode()
+    variant.outputs.all {
+        if (variant.buildType.name == 'debug') {
+            //debug版本不重定义输出目录，也不重命名
+            return
+        }
+        if (outputFileName != null && outputFileName.endsWith(".apk")) {
+            // 命名格式“app_[版本号]_[其他信息].apk”
+            def time = releaseTime()
+            def versionName = getVersionName();
+            String fileName = "${outputFile.name.replace('-release.apk', '')}_${time}${"_" + versionName}.apk"
+            //这里只能用相对路径，不然报错
+            outputFileName = new File(fileName)
+            println "outputFile=$outputFile"
+        }
+    }
+    //APK构建完成后，备份release版本及其混淆信息到指定目录
+    tasks.all { it ->
+        def maybeNeedCopy = false
+        if (it.name.startsWith("assemble") && it.name.endsWith("Release")) {
+            maybeNeedCopy = true
+        }
+        if (maybeNeedCopy) {
+            it.doLast {
+                variant.outputs.each { output ->
+                    def isRelease = variant.buildType.name == 'release'
+                    File outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk') && isRelease) {
+                        File targetDir = rootProject.file("APP版本归档/v${versionName}-${versionCode}")
+                        targetDir.mkdirs()
+                        copy {
+                            from outputFile
+                            into targetDir
+                        }
+                        copy {
+                            from rootProject.file("app/proguard")
+                            into targetDir
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
