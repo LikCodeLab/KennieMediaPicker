@@ -1,11 +1,11 @@
-# KennieLibTemplate
+# KennieMediaPicker
 
 <p align="center"><img src="./resources/screenshots/logo.png" width="10%"/></p>
 
 <p align="center">
-    <strong>Android Library 模板库</strong>
+    <strong>媒体选择库</strong>
     <br>
-    <a href="https://kennielab.github.io/KennieLibTemplate/">使用文档</a>
+    <a href="https://kennielab.github.io/KennieMediaPicker/">使用文档</a>
     <br>
 </p>
 
@@ -19,7 +19,7 @@
 
 ## 简介
 
-Android Library 模板库
+Android MediaPicker 选择库
 
 如有任何疑问或者Bug，请在 github 上公开讨论[技术问题](https://github.com/kennielab/KennieLetterIndexBar/issues)
 
@@ -57,7 +57,7 @@ Android Library 模板库
 
 <div>
 
-Latest Version：[![](https://jitpack.io/v/kennielab/KennieLibTemplate.svg)](https://jitpack.io/#kennielab/KennieLibTemplate)
+Latest Version：[![](https://jitpack.io/v/kennielab/KennieMediaPicker.svg)](https://jitpack.io/#kennielab/KennieMediaPicker)
 
 1) 在 project 的 build.gradle 文件中找到 `allprojects{}` 代码块添加以下代码：
 
@@ -77,12 +77,12 @@ allprojects {
 
 ```
 def lib = "0.0.2"
-implementation "com.github.kennielab:KennieLibTemplate:${lib}"
+implementation "com.github.kennielab:KennieMediaPicker:${lib}"
 ```
 
 ### Wiki使用
 
-具体的使用说明，请参阅 [DOC](https://kennielab.github.io/KennieLibTemplate/)
+具体的使用说明，请参阅 [DOC](https://kennielab.github.io/KennieMediaPicker/)
 
 ## 更新日志
 - [详细日志](./UPDATELOG.md)
