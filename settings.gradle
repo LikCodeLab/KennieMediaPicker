@@ -4,10 +4,10 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven { url 'https://jitpack.io' }
-        jcenter() // Warning: this repository is going to shut down soon
+        //jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "KennieLibTemplate"
+rootProject.name = "KennieMediaPicker"
 
 //************************演示项目 目录************************
 include ':app_example'

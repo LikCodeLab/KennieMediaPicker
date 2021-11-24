@@ -1,4 +1,4 @@
-package com.kennie.example.library.ui.dashboard
+package com.kennie.example.mediapicker.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.kennie.library.example.databinding.FragmentDashboardBinding
+import com.kennie.example.library.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
 
