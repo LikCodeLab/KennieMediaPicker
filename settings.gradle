@@ -13,13 +13,20 @@ rootProject.name = "KennieMediaPicker"
 include ':app_example'
 
 //************************公共库 目录************************
-include ':library'
+include ':library_media_picker'
 
 // https://github.com/LuckSiege/PictureSelector
 include ':PictureSelector_app'
 project(':PictureSelector_app').projectDir = new File('media_picker/PictureSelector_20111114/app')
 include ':PictureSelector_library'
 project(':PictureSelector_library').projectDir = new File('media_picker/PictureSelector_20111114/picture_library')
+
+
+// https://github.com/limuyang2/LPhotoPicker
+include ':LPhotoPicker_app'
+project(':LPhotoPicker_app').projectDir = new File('media_picker/LPhotoPicker_20210929/app')
+include ':LPhotoPicker_library'
+project(':LPhotoPicker_library').projectDir = new File('media_picker/LPhotoPicker_20210929/photolibrary')
 
 
 // https://github.com/ITxiaoguang/PhotoViewer

@@ -19,7 +19,8 @@
 
 ## 简介
 
-Android MediaPicker 选择库
+Android 平台下的多媒体选择器，支持从相册获取图片、视频、音频&拍照，支持裁剪(单图or多图裁剪)、压缩、主题自定义配置等功能，
+
 
 如有任何疑问或者Bug，请在 github 上公开讨论[技术问题](https://github.com/kennielab/KennieLetterIndexBar/issues)
 
@@ -27,7 +28,10 @@ Android MediaPicker 选择库
 
 ## 功能及特点
 
-- XX、XX、XX、XX；
+- 主题自定义(默认自带毛玻璃效果)；
+- 支持暗黑模式
+- 支持Android10的HEIF图片格式支持
+- 支持Android10的沙盒机制
 
 ## APP下载
 
